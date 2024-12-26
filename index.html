@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인페이지_이승민</title>
+    <style>
+        div {
+            text-align: center;
+        }
+
+        .intro>img {
+            padding-top: 30px;
+        }
+
+        .card1 {
+            padding-top: 20px;
+            float: left;
+            margin-left: 600px;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .card2 {
+            padding-top: 20px;
+            float: right;
+            margin-right: 600px;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .drop_btn {
+            background-color: cornflowerblue;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block
+        }
+
+        .dropdown_cont {
+            display: none;
+            min-width: 300px;
+            position: absolute;
+            z-index: 1;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2)
+        }
+
+        .dropdown_link {
+            display: block;
+            padding: 12px 16px;
+            color: black;
+            text-decoration: none
+        }
+
+        .dropdown_link:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown_cont {
+            display: block
+        }
+
+        .dropdown:hover .drop_btn {
+            background-color: cornflowerblue
+        }
+
+        .gallery {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 300px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .home-page {
+            margin-top: 30px;
+            float: right;
+
+        }
+
+        .home-button {
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .home-button img {
+            width: 50px;
+            /* 이미지 크기 */
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .home-button img:hover {
+            transform: scale(1.2);
+            /* 마우스 호버시 크기 확대 */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-lg-4">
+            <h2><span style="color:cornflowerblue">ABOUT ME</span></h2>
+        </div>
+        <div class="intro">
+            <hr class="featurette-divider">
+            <img src="https://i.ibb.co/1Rm5dVB/8925e9ecc38b8ebf0a22.jpg" class="rounded mx-auto d-block" alt="이승민"
+                width="250" height="250">
+
+        </div>
+        <h3 class="fw-normal"><span style="color:cornflowerblue">이름</span> 이승민</h3>
+        <h3 class="fw-normal"><span style="color:cornflowerblue">MBTI</span> INFP</h3>
+        <h3 class="fw-normal"><span style="color:cornflowerblue">취미</span> 키보드 커스텀, 독서</h3>
+        <div class="dropdown">
+            <button class="drop_btn">BLOG</button>
+            <div class="dropdown_cont">
+                <a href="#" class="dropdown_link"><a
+                        href="https://cork-7.tistory.com/">https://cork-7.tistory.com/</a></a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="drop_btn">더 알고싶다면</button>
+            <div class="dropdown_cont">
+                <a href="#" class="dropdown_link">최근에 키보드 커스텀 세계에 빠져서 2대를 빌드하고 키캡을 기다리고 있습니다.</a>
+            </div>
+        </div>
+        <h4><span style="color:cornflowerblue">💙내가 좋아하는 것들💙</span></h4>
+        <div class="gallery" id="gallery">
+            <img src="https://i.ibb.co/cvhBNSn/f0c4f5721d010648995b.jpg" onclick="showNextImage()">
+            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMDNfMTA1%2FMDAxNjY3NDgxMjczNzk0.Ixcs1vwjHi1I3uPjzdaX10pUwpmtPeh59L1FDhBxgjcg.ije_VdlcLTJgSKojAXFkXpPPPR2lUYUQlBbitcRgoFIg.JPEG.kih451145%2F1667481271000.jpg&type=sc960_832"
+                onclick="showNextImage()">
+            <img src="https://i.ibb.co/HqsfpVS/2024-12-26-214521.png" onclick="showNextImage()" >
+        </div>
+        <div class="home-page">
+            <a href="https://seung-min-88.github.io/Home/" class="home-button">
+                <img src="https://img.icons8.com/?size=100&id=EkVS0vhJIaAl&format=png&color=000000" alt="홈 버튼" />
+            </a>
+        </div>
+
+        <script>
+            const images = document.querySelectorAll('.gallery img');
+            let currentIndex = 0;
+
+            function showNextImage() {
+                images[currentIndex].style.display = 'none';
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].style.display = 'block';
+            }
+
+            // 처음에 첫 번째 이미지만 보이도록 설정
+            for (let i = 1; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
+        </script>
+    </div><!-- /.col-lg-4 -->
+
+    </div>
+
+</body>
+
+</html>
