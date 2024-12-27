@@ -14,21 +14,7 @@
             padding-top: 30px;
         }
 
-        .card1 {
-            padding-top: 20px;
-            float: left;
-            margin-left: 600px;
-            border-radius: 50px;
-            overflow: hidden;
-        }
-
-        .card2 {
-            padding-top: 20px;
-            float: right;
-            margin-right: 600px;
-            border-radius: 50px;
-            overflow: hidden;
-        }
+        
 
         .drop_btn {
             background-color: cornflowerblue;
@@ -36,12 +22,15 @@
             padding: 16px;
             font-size: 16px;
             color: #fff;
-            cursor: pointer
+            cursor: pointer;
+            width: 150px;
+            height: 70px;
         }
 
         .dropdown {
             position: relative;
-            display: inline-block
+            display: inline-block;
+            vertical-align: middle;
         }
 
         .dropdown_cont {
@@ -91,17 +80,6 @@
             transform: scale(1.1);
         }
 
-        .home-page {
-            margin-top: 30px;
-            float: right;
-
-        }
-
-        .home-button {
-            display: inline-block;
-            text-decoration: none;
-            margin-top: 20px;
-        }
 
         .home-button img {
             width: 50px;
@@ -114,48 +92,77 @@
             transform: scale(1.2);
             /* 마우스 호버시 크기 확대 */
         }
+
+        .header{
+            display: flex; 
+            align-items: center;
+        }
+
+        .header > h2{
+            flex:1; 
+            text-align: center; 
+            margin: 0;
+        }
     </style>
 
 </head>
 
 <body>
     <div class="row">
-        <div class="col-lg-4">
-            <h2><span style="color:cornflowerblue">ABOUT ME</span></h2>
+
+        <div class="header">
+
+            <div class="home-page" style="visibility: hidden;">
+                <a href="https://seung-min-88.github.io/Home/" class="home-button">
+                    <img src="https://img.icons8.com/?size=100&id=EkVS0vhJIaAl&format=png&color=000000" alt="홈 버튼" />
+                </a>
+            </div>
+
+            <h2>
+                <span style="color:cornflowerblue">ABOUT ME</span>
+            </h2>
+
+            <div class="home-page">
+                <a href="https://seung-min-88.github.io/Home/" class="home-button">
+                    <img src="https://img.icons8.com/?size=100&id=EkVS0vhJIaAl&format=png&color=000000" alt="홈 버튼" />
+                </a>
+            </div>
+
         </div>
+
         <div class="intro">
             <hr class="featurette-divider">
-            <img src="https://i.ibb.co/1Rm5dVB/8925e9ecc38b8ebf0a22.jpg" class="rounded mx-auto d-block" alt="이승민"
-                width="250" height="250">
+            <img src="https://i.ibb.co/1Rm5dVB/8925e9ecc38b8ebf0a22.jpg"
+                class="rounded mx-auto d-block" alt="이승민" width="250" height="250">
 
         </div>
         <h3 class="fw-normal"><span style="color:cornflowerblue">이름</span> 이승민</h3>
         <h3 class="fw-normal"><span style="color:cornflowerblue">MBTI</span> INFP</h3>
         <h3 class="fw-normal"><span style="color:cornflowerblue">취미</span> 키보드 커스텀, 독서</h3>
+        
+        
         <div class="dropdown">
             <button class="drop_btn">BLOG</button>
             <div class="dropdown_cont">
-                <a href="#" class="dropdown_link"><a
-                        href="https://cork-7.tistory.com/">https://cork-7.tistory.com/</a></a>
+                <a href="https://cork-7.tistory.com/">https://cork-7.tistory.com/</a></a>
             </div>
         </div>
+        
         <div class="dropdown">
             <button class="drop_btn">더 알고싶다면</button>
             <div class="dropdown_cont">
-                <a href="#" class="dropdown_link">최근에 키보드 커스텀 세계에 빠져서 2대를 빌드하고 키캡을 기다리고 있습니다.</a>
+                <a href="#" class="dropdown_link">최근 커스텀 키보드에 빠져 빌드하고 있으며 새로운 키캡을 펀딩후 기다리고 있습니다. 책은 듄 시리즈 읽고 있어요.</a>
             </div>
         </div>
+
+
         <h4><span style="color:cornflowerblue">💙내가 좋아하는 것들💙</span></h4>
         <div class="gallery" id="gallery">
-            <img src="https://i.ibb.co/cvhBNSn/f0c4f5721d010648995b.jpg" onclick="showNextImage()">
-            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMDNfMTA1%2FMDAxNjY3NDgxMjczNzk0.Ixcs1vwjHi1I3uPjzdaX10pUwpmtPeh59L1FDhBxgjcg.ije_VdlcLTJgSKojAXFkXpPPPR2lUYUQlBbitcRgoFIg.JPEG.kih451145%2F1667481271000.jpg&type=sc960_832"
-                onclick="showNextImage()">
-            <img src="https://i.ibb.co/HqsfpVS/2024-12-26-214521.png" onclick="showNextImage()" >
-        </div>
-        <div class="home-page">
-            <a href="https://seung-min-88.github.io/Home/" class="home-button">
-                <img src="https://img.icons8.com/?size=100&id=EkVS0vhJIaAl&format=png&color=000000" alt="홈 버튼" />
-            </a>
+            <img src="https://i.ibb.co/cvhBNSn/f0c4f5721d010648995b.jpg"
+                onclick="showNextImage()" />
+            <img src="https://i.ibb.co/HqsfpVS/2024-12-26-214521.png"
+                onclick="showNextImage()" />
+            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMDNfMTA1%2FMDAxNjY3NDgxMjczNzk0.Ixcs1vwjHi1I3uPjzdaX10pUwpmtPeh59L1FDhBxgjcg.ije_VdlcLTJgSKojAXFkXpPPPR2lUYUQlBbitcRgoFIg.JPEG.kih451145%2F1667481271000.jpg&type=sc960_832" onclick="showNextImage()" />
         </div>
 
         <script>
